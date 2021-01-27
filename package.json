@@ -7,7 +7,8 @@
         "eslint": "eslint src/**/*.jsx --ignore-pattern node-modules/",
         "start": "cross-env NODE_ENV=development webpack serve",
         "dev": "cross-env NODE_ENV=development webpack --mode development",
-        "build": "cross-env NODE_ENV=production webpack --mode production"
+        "build": "cross-env NODE_ENV=production webpack --mode production",
+        "test": ""
     },
     "keywords": [],
     "author": "",
@@ -48,7 +49,9 @@
     },
     "lint-staged": {
         "*.jsx": [
-            "eslint --fix"
+            "prettier --write",
+            "eslint --fix",
+            "npm test"
         ]
     }
 }
