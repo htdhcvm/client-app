@@ -3,10 +3,7 @@
         "browser": true,
         "es2021": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "google"
-    ],
+    "extends": ["plugin:react/recommended", "airbnb", "prettier"],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -14,18 +11,14 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
+    "plugins": ["react", "prettier"],
     "rules": {
-        "indent": ["error", 4],
-        "comma-dangle": ["error", {
-            // "arrays": "never",
-            // "objects": "never",
-            // "imports": "never",
-            // "exports": "never",
-            "functions": "never"
-        }],
-        "quotes": [2, "double", "avoid-escape"]
+        "react/jsx-indent": [
+            2,
+            4,
+            { "checkAttributes": true, "indentLogicalExpressions": true }
+        ],
+        "import/no-unresolved": "off",
+        "no-console": "error"
     }
 }
