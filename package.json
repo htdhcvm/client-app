@@ -1,10 +1,10 @@
 {
-    "name": "create-react-app-fromscratch",
+    "name": "client-app",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "eslint-check": "eslint src/**/*.jsx --ignore-pattern node-modules/",
+        "eslint": "eslint src/**/*.jsx --ignore-pattern node-modules/",
         "start": "cross-env NODE_ENV=development webpack serve",
         "dev": "cross-env NODE_ENV=development webpack --mode development",
         "build": "cross-env NODE_ENV=production webpack --mode production"
@@ -18,9 +18,19 @@
         "@babel/preset-react": "^7.12.1",
         "babel-loader": "^8.1.0",
         "css-loader": "^5.0.0",
-        "eslint": "^7.12.1",
+        "eslint": "^7.18.0",
+        "eslint-config-airbnb": "^18.2.1",
         "eslint-config-google": "^0.14.0",
-        "eslint-plugin-react": "^7.21.5",
+        "eslint-config-prettier": "^7.2.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-react": "^7.22.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "husky": "^4.3.8",
+        "jest": "^26.6.3",
+        "lint-staged": "^10.5.3",
+        "prettier": "^2.2.1",
         "style-loader": "^2.0.0",
         "webpack": "^5.3.2",
         "webpack-cli": "^4.1.0",
@@ -30,5 +40,15 @@
         "cross-env": "^7.0.2",
         "react": "^17.0.1",
         "react-dom": "^17.0.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.jsx": [
+            "eslint --fix"
+        ]
     }
 }
